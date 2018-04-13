@@ -44,4 +44,36 @@ object KotlinToastUtils {
         }
         toast!!.show()
     }
+    fun showLong(mContext : Context,msg : Any){
+        if (mContext!! ==null){
+            return
+        }
+        if (msg is String){
+            showLong(mContext,msg.toString())
+        }else if (msg is Int){
+            showLong(mContext,msg.toInt())
+        }
+    }
+    fun showLong(mContext : Context,msg : String){
+        if (mContext!! ==null){
+            return
+        }
+        if (toast==null){
+            toast = Toast.makeText(mContext!!,msg,Toast.LENGTH_LONG)
+        }else{
+            toast!!.setText(msg)
+        }
+        toast!!.show()
+    }
+    fun showLong(mContext : Context,msg : Int){
+        if (mContext!! ==null){
+            return
+        }
+        if (toast ==null){
+            toast = Toast.makeText(mContext!!,msg,Toast.LENGTH_LONG)
+        }else{
+            toast!!.setText(msg)
+        }
+        toast!!.show()
+    }
 }

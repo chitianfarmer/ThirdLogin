@@ -69,7 +69,7 @@ object KotlinThirdLoginUtils {
         this.listener = loginListener
         if (mTencent != null) {
             if (!mTencent!!.isSessionValid) {
-                mTencent!!.login(mContext, Configs.SCOPE, loginWatcher)
+                mTencent!!.login(mContext, KotlinConfigs.SCOPE, loginWatcher)
             } else {
                 mTencent!!.logout(mContext)
             }

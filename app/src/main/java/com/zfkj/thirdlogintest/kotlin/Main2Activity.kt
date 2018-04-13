@@ -135,7 +135,7 @@ class Main2Activity : AppCompatActivity(), View.OnClickListener, KotlinThirdLogi
 
         override fun onReceive(context: Context, intent: Intent) {
             if (KotlinConfigs.LOGIN_BY_WECHAT_RESULT == intent.action) {
-                val resultCode = intent.getStringExtra(Configs.WX_RESULT_CODE)
+                val resultCode = intent.getStringExtra(KotlinConfigs.WX_RESULT_CODE)
                 KotlinThirdLoginUtils.getWxToken(resultCode, object : KotlinThirdLoginUtils.WxLoginListener {
                     override fun onSuccess(openId: String, headimgurl: String, nickname: String, thirdType: String) {
                         showMessage(openId, headimgurl, nickname, Configs.wxType)
