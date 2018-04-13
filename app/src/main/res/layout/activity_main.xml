@@ -19,6 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="微信登录" />
+
+    <Button
+        android:id="@+id/btn_login_kotlin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kotlin展示QQ/微信登录" />
+
     <ImageView
         android:src="@mipmap/ic_launcher"
         android:id="@+id/iv_avatar"

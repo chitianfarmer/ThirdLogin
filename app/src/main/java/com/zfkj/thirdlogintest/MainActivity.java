@@ -13,14 +13,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.alibaba.fastjson.JSONObject;
 import com.example.user.utils.media.GildeTools.GlideUtils;
 import com.example.user.utils.util.ToastUtils;
 import com.tencent.connect.common.Constants;
+import com.zfkj.thirdlogintest.kotlin.Main2Activity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button btn_login_qq,btn_login_wx;
+    private Button btn_login_qq,btn_login_wx,btn_login_kotlin;
     private TextView tv_show;
     private ImageView iv_avatar;
 
@@ -50,15 +50,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_login_wx = (Button) findViewById(R.id.btn_login_wx);
         tv_show = (TextView) findViewById(R.id.tv_show);
         iv_avatar = (ImageView) findViewById(R.id.iv_avatar);
+        btn_login_kotlin = (Button) findViewById(R.id.btn_login_kotlin);
     }
 
     private void initData() {
-
+        btn_login_kotlin.setText("Kotlin展示QQ/微信登录");
     }
 
     private void setListener() {
         btn_login_qq.setOnClickListener(this);
         btn_login_wx.setOnClickListener(this);
+        btn_login_kotlin.setOnClickListener(this);
     }
 
     private void logoutByQQ(String thirdType) {
@@ -77,6 +79,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_login_wx:
                 showAlert("微信",Configs.wxType);
+                break;
+            case R.id.btn_login_kotlin:
+                startActivity(new Intent(MainActivity.this, Main2Activity.class));
+                finish();
                 break;
         }
     }
